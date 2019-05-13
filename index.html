@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>The Blockchain Synth</title>
+    <script src="https://unpkg.com/lodash@4.16.6"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <style>
+      *{ font-family: 'Roboto Mono'; }
+    </style>
+  </head>
+  <body style="text-align: center">
+    <img src="http://www.altcointoday.com/wp-content/uploads/2017/04/bitcoin-pixelated.png" width="100">
+    <h1>Listen to Bitcoin!</h1> 
+    <div style="padding: 0 20%">
+      <div style="font-size:12px; width:100%; overflow: hidden; word-wrap:break-word;" id="rawtx">Searching for last Bitcoin transaction...</div><br>
+    </div><br>
+    <div id="txplaying"></div><br>
+    <button id="nextbtn" style="display:none">PLAY NEXT TX</button>
+    <div style="font-size:200px" id="nowplaying"></div>
+    <br><br>
+    Crazy experiment made with<br>
+    <img src="https://orig00.deviantart.net/26e4/f/2014/281/5/9/pixel_heart_by_emeraldplaysmcraft-d81zjcr.png" height="50"><br>
+    By <a href="https://github.com/turinglabsorg" target="_blank">turinglabs</a>
+    <script src="main.js"></script>
+  </body>
+</html>
