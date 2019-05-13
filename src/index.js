@@ -38,7 +38,6 @@ async function playTransaction(index){
         
         for(var i=0; i <= toplay.length; i+=2){
             var note = parseInt(toplay.substr(i, 2), 16)
-            console.log(note)
             var byte = toplay.substr(i, 2)
             var time = i * 100
             if( i < toplay.length){
