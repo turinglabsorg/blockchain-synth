@@ -47,8 +47,6 @@ async function playTransaction(index){
                     playNext()
                 }
             }
-        }else{
-            alert('No transactions!')
         }
     }
 }
