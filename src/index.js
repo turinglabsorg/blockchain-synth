@@ -25,26 +25,30 @@ function playSound(note, byte, time){
 
 async function playTransaction(index){
     if(isplaying === false){
-        var tx = await axios.get('https://api.blockcypher.com/v1/btc/main/txs/' + txns[index] + '?includeHex=true&limit=1')
-        var toplay = tx.data.hex
-        playingindex = index
-        isplaying = true
-        document.getElementById("txplaying").innerHTML = 'Playing TX #' + playingindex;
-        document.getElementById("rawtx").innerHTML = toplay;
+        if(txns[index] !== undefined){
+            var tx = await axios.get('https://api.blockcypher.com/v1/btc/main/txs/' + txns[index] + '?includeHex=true&limit=1')
+            var toplay = tx.data.hex
+            playingindex = index
+            isplaying = true
+            document.getElementById("txplaying").innerHTML = 'Playing TX #' + playingindex;
+            document.getElementById("rawtx").innerHTML = toplay;
 
-        synth.setOscWave(0); 
-        synth.setDelayFeedback(0.5); 
-        synth.setDelayTimeTempo(110, 0.25);
-        
-        for(var i=0; i <= toplay.length; i+=2){
-            var note = parseInt(toplay.substr(i, 2), 16)
-            var byte = toplay.substr(i, 2)
-            var time = i * 100
-            if( i < toplay.length){
-                playSound(note, byte, time);
-            } else {
-                playNext()
+            synth.setOscWave(0); 
+            synth.setDelayFeedback(0.5); 
+            synth.setDelayTimeTempo(110, 0.25);
+            
+            for(var i=0; i <= toplay.length; i+=2){
+                var note = parseInt(toplay.substr(i, 2), 16)
+                var byte = toplay.substr(i, 2)
+                var time = i * 100
+                if( i < toplay.length){
+                    playSound(note, byte, time);
+                } else {
+                    playNext()
+                }
             }
+        }else{
+            alert('No transactions!')
         }
     }
 }
@@ -72,3 +76,9 @@ async function parselastblock(){
 }
 
 parselastblock()
+
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        playNext()
+    }
+}
