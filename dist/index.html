@@ -8,18 +8,19 @@
       *{ font-family: 'Roboto Mono'; }
     </style>
   </head>
-  <body style="text-align: center">
-    <img src="http://www.altcointoday.com/wp-content/uploads/2017/04/bitcoin-pixelated.png" width="100">
-    <h1>Listen to Bitcoin!</h1> 
+  <body style="text-align: center"><br>
+    <img src="bitcoin-pixelated.png" width="100">
+    <h1>Bitcoin Sound Explorer!</h1> 
+    <div id="txplaying"></div><br>
     <div style="padding: 0 20%">
       <div style="font-size:12px; width:100%; overflow: hidden; word-wrap:break-word;" id="rawtx">Searching for a Bitcoin transaction...<br>After loading press SPACE to change TX</div><br>
     </div><br>
-    <div id="txplaying"></div><br>
-    <div style="font-size:200px" id="nowplaying"></div>
+    <div style="font-size:200px; line-height:180px;" id="nowplaying"></div><br>
+    <button id="stop">PLEASE STOP IT!</button>
+    <button id="next">PLAY NEXT!</button>
     <br><br>
-    Crazy experiment made with<br>
-    <img src="https://orig00.deviantart.net/26e4/f/2014/281/5/9/pixel_heart_by_emeraldplaysmcraft-d81zjcr.png" height="50"><br>
-    By <a href="https://github.com/turinglabsorg" target="_blank">turinglabs</a>
+    Crazy experiment made by
+    <br> <a href="https://github.com/turinglabsorg" target="_blank">turinglabs</a>
     <script src="main.js"></script>
   </body>
 </html>
